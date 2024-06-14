@@ -7,12 +7,13 @@ const { default: axios } = require("axios");
 
 // Create document
 exports.createdocument = catchAsyncErrors(async (req, res, next) => {
-  const { name, email, description } = req.body;
+  const { name, email, description, fireSafetyIssues } = req.body;
 
   const newDocument = new document({
     name,
     email,
     description,
+    fireSafetyIssues,
   });
 
   await newDocument.save();
@@ -34,7 +35,7 @@ exports.getDocumentById = catchAsyncErrors(async (req, res, next) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:8080/generate-report",
+      "http://localhost:8080/new-generate-report",
       singleDocument,
       {
         responseType: "arraybuffer",

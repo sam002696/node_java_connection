@@ -11,6 +11,31 @@ const documentSchema = mongoose.Schema({
     type: String,
   },
 
+  // fireSafetyIssues: [
+  //   {
+  //     termTitle: {
+  //       type: String,
+  //       required: true,
+  //     },
+  //     termShortDesc: {
+  //       type: String,
+  //       required: true,
+  //     },
+  //     termRecommendation: [
+  //       {
+  //         recommendation: {
+  //           type: String,
+  //           required: true,
+  //         },
+  //         important: {
+  //           type: String,
+  //           required: true,
+  //         },
+  //       },
+  //     ],
+  //   },
+  // ],
+
   fireSafetyIssues: [
     {
       termTitle: {
@@ -21,18 +46,14 @@ const documentSchema = mongoose.Schema({
         type: String,
         required: true,
       },
-      termRecommendation: [
-        {
-          Recommendation: {
-            type: String,
-            required: true,
-          },
-          isImportant: {
-            type: Boolean,
-            required: true,
-          },
-        },
-      ],
+      normalRecommendation: {
+        type: String,
+        required: true,
+      },
+      seriousRecommendation: {
+        type: String,
+        required: true,
+      },
     },
   ],
 
