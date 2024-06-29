@@ -28,12 +28,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // const order = require("./routes/orderRoute");
 // const payment = require("./routes/paymentRoute");
 const document = require("./routes/docmentRoute");
+const lightEngineeringRoute = require("./routes/lightEngineeringRoute");
+const lightEngineeringQuestionsRoute = require("./routes/lightEngineeringQuestionsRoute");
+const lightEngineeringPhotosRoute = require("./routes/lightEngineeringPhotosRoute");
 
 // app.use("/api/v1", product);
 // app.use("/api/v1", user);
 // app.use("/api/v1", order);
 // app.use("/api/v1", payment);
 app.use("/api/v1", document);
+app.use("/api/v1", lightEngineeringRoute);
+app.use("/api/v1", lightEngineeringQuestionsRoute);
+app.use("/api/v1", lightEngineeringPhotosRoute);
 
 // app.use(express.static(path.join(__dirname, "../frontend/build")));
 
